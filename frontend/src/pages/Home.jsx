@@ -1,23 +1,44 @@
 import React from 'react';
-import './Home.css'; // You’ll create this CSS file
+import { motion } from 'framer-motion';
+import './Home.css'; // your styles
 
 const Home = () => {
   return (
     <section className="home">
-      <div className="home-content">
-        <h1>Hi, I'm <span>Amit Kumar Behera</span></h1>
-        <h2>Finalist @ CFG 2025 | Data Science & MERN Enthusiast</h2>
-        <p>
-          A 3rd-year B.Tech CSE (Data Science) student passionate about building real-world solutions through technology.
-          Skilled in Python, Java, Machine Learning, and Web Development using the MERN stack.
-        </p>
-        <div className="home-buttons">
-          <a href="/Amit-Kumar-Resume.pdf" download className="btn">
-            Download Resume
-          </a>
-          <a href="/contact" className="btn-outline">Contact Me</a>
-        </div>
-      </div>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        Hi, I'm Amit Kumar Behera
+      </motion.h1>
+
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
+        Finalist @ JPMorgan Chase & Co. Code for Good 2025 | Data Science & MERN Enthusiast
+      </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+      >
+        I'm a 3rd-year B.Tech CSE (Data Science) student passionate about building real-world solutions through technology.
+        Skilled in Python, Java, Machine Learning, and MERN Stack Web Development.
+      </motion.p>
+
+      <motion.div
+        className="buttons"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.0, duration: 0.5 }}
+      >
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn">Download Resume</a>
+        <a href="#contact" className="btn btn-outline">Contact Me</a>
+      </motion.div>
     </section>
   );
 };
