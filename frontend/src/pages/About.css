@@ -1,0 +1,26 @@
+.about {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content {
+  max-width: 800px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #00ffd5;
+  display: inline-block;
+}
+
+.about-content strong {
+  color: #111;
+}
