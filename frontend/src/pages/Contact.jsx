@@ -1,20 +1,13 @@
-import React, { useState } from "react";
-import "./Contact.css";
+import React, { useState } from 'react';
+import Seo from '../components/Seo';
+import './Contact.css';
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
@@ -24,14 +17,11 @@ function Contact() {
     try {
       const res = await fetch("https://portfolio-backend-5nxi.onrender.com/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
-
       if (data.success) {
         alert("✅ Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
@@ -47,43 +37,28 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact">
-      <div className="contact-content">
-        <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+    <>
+      <Seo
+        title="Contact | Amit Kumar Behera"
+        description="Get in touch with Amit Kumar Behera – MERN developer and data science enthusiast. Use the contact form to send a message."
+        keywords="Contact Amit Kumar Behera, Reach Out, Contact Form"
+        url="https://amit-portfolio-two.vercel.app/contact"
+      />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="6"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-      </div>
-    </section>
+      <section id="contact" className="contact">
+        <div className="contact-content">
+          <h2>Contact Me</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
+            <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+            <textarea name="message" placeholder="Your Message" rows="6" value={formData.message} onChange={handleChange} required />
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }
 

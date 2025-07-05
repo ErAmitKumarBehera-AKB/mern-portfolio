@@ -1,0 +1,88 @@
+/* src/pages/Achievements.css */
+.achievements {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.achievements-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.achievements-content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #00ffd5;
+  display: inline-block;
+}
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #00ffd5;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 8px;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  background: #00ffd5;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 1;
+}
+
+.timeline-content {
+  position: relative;
+  background: #f9f9f9;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-date {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+

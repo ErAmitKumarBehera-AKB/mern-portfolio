@@ -1,7 +1,10 @@
+/* Projects.css */
+
 .projects {
   padding: 4rem 2rem;
   background-color: #f9f9f9;
   min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
 .projects-content {
@@ -14,26 +17,31 @@
   margin-bottom: 2rem;
   border-bottom: 2px solid #00ffd5;
   display: inline-block;
+  color: #111;
+  transition: color 0.3s ease;
 }
 
 .project-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin-bottom: 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card h3 {
   font-size: 1.5rem;
   color: #111;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .project-subtitle {
   font-size: 0.95rem;
   color: #666;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .project-details {
@@ -42,6 +50,7 @@
   color: #444;
   line-height: 1.7;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .project-links a {
@@ -50,6 +59,7 @@
   font-weight: 600;
   color: #111;
   border-bottom: 2px solid #00ffd5;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .project-links a:hover {
@@ -61,4 +71,36 @@
   color: #aaa;
   border: none;
   font-style: italic;
+}
+
+/* Dark mode support */
+body.dark-mode .projects {
+  background-color: #121212;
+}
+
+body.dark-mode .projects-content h2 {
+  color: #00ffd5;
+}
+
+body.dark-mode .project-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .project-card h3,
+body.dark-mode .project-details,
+body.dark-mode .project-links a {
+  color: #eee;
+}
+
+body.dark-mode .project-subtitle {
+  color: #aaa;
+}
+
+body.dark-mode .project-links a:hover {
+  color: #00ffd5;
+}
+
+body.dark-mode .disabled-link {
+  color: #555;
 }

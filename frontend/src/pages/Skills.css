@@ -1,7 +1,10 @@
+/* src/pages/Skills.css */
+
 .skills {
   padding: 4rem 2rem;
   background-color: #f9f9f9;
   min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
 .skills-content {
@@ -14,6 +17,8 @@
   margin-bottom: 2rem;
   border-bottom: 2px solid #00ffd5;
   display: inline-block;
+  color: #111;
+  transition: color 0.3s ease;
 }
 
 .skill-category {
@@ -24,6 +29,7 @@
   font-size: 1.3rem;
   color: #111;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .skill-category ul {
@@ -35,16 +41,51 @@
 }
 
 .skill-category li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background-color: #e6f7ff;
   padding: 0.6rem 1.2rem;
   border-radius: 30px;
   font-weight: 500;
   color: #333;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  cursor: default;
+  font-size: 0.95rem;
 }
 
+.skill-category li svg {
+  font-size: 1.1rem;
+  margin-right: 0.25rem;
+}
+
+/* Hover */
 .skill-category li:hover {
+  background-color: #00ffd5;
+  color: #111;
+}
+
+/* 🔥 Dark Mode */
+body.dark-mode .skills {
+  background-color: #121212;
+}
+
+body.dark-mode .skills-content h2 {
+  color: #00ffd5;
+}
+
+body.dark-mode .skill-category h3 {
+  color: #eee;
+}
+
+body.dark-mode .skill-category li {
+  background-color: #1e1e1e;
+  color: #ccc;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .skill-category li:hover {
   background-color: #00ffd5;
   color: #111;
 }

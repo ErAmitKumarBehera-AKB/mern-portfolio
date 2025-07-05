@@ -1,10 +1,19 @@
+// src/pages/Home.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Home.css'; // your styles
+import Seo from '../components/Seo';
+import './Home.css';
 
 const Home = () => {
   return (
     <section className="home">
+      <Seo
+        title="Amit Kumar Behera | MERN Portfolio"
+        description="Finalist @ JPMorgan Chase Code for Good 2025. MERN Stack & Data Science enthusiast building real-world solutions."
+        keywords="Amit Kumar Behera, MERN, Data Science, Code for Good, Portfolio"
+        url="https://amit-portfolio-two.vercel.app/"
+      />
+
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
