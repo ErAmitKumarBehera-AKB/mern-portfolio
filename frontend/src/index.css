@@ -33,3 +33,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+body.light {
+  background-color: #fff;
+  color: #111;
+}

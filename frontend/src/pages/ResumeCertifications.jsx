@@ -1,67 +1,45 @@
 // src/pages/ResumeCertifications.jsx
 import React from 'react';
 import './ResumeCertifications.css';
-
-const certifications = [
-  {
-    title: 'HackerRank Java (4⭐)',
-    link: 'https://www.hackerrank.com/amitbehera121',
-  },
-  {
-    title: 'British Airways Data Science Job Simulation (Forage)',
-    link: 'https://www.theforage.com/simulations/british-airways/data-science',
-  },
-  {
-    title: '4⭐ Java HackerRank',
-    link: 'https://www.hackerrank.com/amitbehera121',
-  },
-  {
-    title: 'Treasure Hunt Certificate',
-    link: '#', // Replace with actual link
-  },
-  {
-    title: 'Matriculation Certificate',
-    link: '#', // Replace with actual link
-  },
-  {
-    title: 'Senior Secondary Certificate',
-    link: '#', // Replace with actual link
-  },
-  {
-    title: 'View My LeetCode Profile',
-    link: 'https://leetcode.com/Amitbehera121/',
-  },
-];
+import { useTheme } from '../context/ThemeContext';
 
 const ResumeCertifications = () => {
+  const { darkMode } = useTheme();
+
   return (
-    <section className="resume-section">
-      <div className="resume-container">
+    <section className={`resume-section ${darkMode ? 'dark' : ''}`}>
+      <div className="resume-content">
         <h2>Resume & Certifications</h2>
 
-        <div className="download-resume">
+        <div className="resume-links">
           <a
             href="/resume.pdf"
-            className="btn"
             target="_blank"
             rel="noopener noreferrer"
+            className="btn"
           >
-            📄 Download Resume
+            View Resume
           </a>
         </div>
 
-        <div className="cert-grid">
-          {certifications.map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cert-card"
-            >
-              {item.title}
-            </a>
-          ))}
+        <div className="certifications">
+          <h3>Certifications</h3>
+          <ul>
+            <li>
+              <a href="https://www.hackerrank.com/certificates/xxxxx" target="_blank" rel="noopener noreferrer">
+                Java (HackerRank 4⭐) – View Certificate
+              </a>
+            </li>
+            <li>
+              British Airways Data Science Job Simulation (Forage) – Completed
+            </li>
+            <li>
+              Treasure Hunt Winner – HACKERWAR 5.0
+            </li>
+            <li>
+              View my <a href="https://leetcode.com/your-leetcode-url/" target="_blank" rel="noopener noreferrer">LeetCode profile</a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

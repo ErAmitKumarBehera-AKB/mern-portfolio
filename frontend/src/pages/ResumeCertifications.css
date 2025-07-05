@@ -59,3 +59,13 @@
   color: #111;
   transform: translateY(-3px);
 }
+
+/* Dark Mode */
+.resume-section.dark {
+  background-color: #111;
+  color: #fff;
+}
+
+.resume-section.dark a {
+  color: #00ffd5;
+}
